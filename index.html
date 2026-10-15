@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      font-family: Arial, sans-serif;
+    }
+    .weather {
+      width: 320px;
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      color: white;
+    }
+    .top, .middle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .temp { font-size: 52px; font-weight: bold; }
+    .icon { font-size: 48px; }
+    .desc { font-size: 22px; margin: 18px 0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+    .stats div {
+      background: rgba(255,255,255,0.08);
+      padding: 12px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+    .stats strong { display: block; font-size: 16px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="weather">
+    <div class="top">
+      <span id="city">Paris</span>
+      <span id="local-time">--:--</span>
+    </div>
+    <div class="middle">
+      <div class="temp" id="temperature">24°</div>
+      <div class="icon" id="weather-icon">☀️</div>
+    </div>
+    <div class="desc" id="description">Sunny</div>
+    <div class="stats">
+      <div>Humidity<strong id="humidity">60%</strong></div>
+      <div>Wind<strong id="wind">12 km/h</strong></div>
+      <div>Rain<strong id="rain">5%</strong></div>
+    </div>
+    <p id="weather-status" role="status" aria-live="polite"></p>
+  </div>
+  <script src="weather.js" defer></script>
+</body>
+</html>
